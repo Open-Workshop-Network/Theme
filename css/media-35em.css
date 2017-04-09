@@ -1,0 +1,47 @@
+@media screen and (min-width: 35em) {
+  header {
+    left: 2em;
+  }
+  #homepage .about,
+  #homepage .blog {
+    width: 75%;
+  }
+  #homepage .filter .taxonomy {
+    float: left;
+    width: 48%;
+    margin-right: 2%;
+  }
+  #homepage .filter .taxonomy > ul {
+    max-height: 30em;
+    overflow: auto;
+  }
+  #homepage .blog article {
+    margin: 0 0 4em;
+  }
+  #homepage .blog article h2,
+  #homepage .blog article p {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  #workshop .desc {
+    width: 75%;
+  }
+  #workshop ul.links {
+    width: 75%;
+  }
+  #workshop .photos {
+    height: 25em;
+  }
+  #workshop section {
+    width: 100%;
+    overflow: hidden;
+  }
+  .post img {
+    max-width: 100%;
+    margin-left: 0;
+  }
+  footer a,
+  footer p {
+    max-width: 75%;
+  }
+}

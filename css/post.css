@@ -1,0 +1,154 @@
+#blog .wrapper > h1 {
+  margin-bottom: 1em;
+}
+.post,
+.comment {
+  line-height: 1.5;
+  padding-bottom: 6em;
+}
+.post h1,
+.comment h1 {
+  font-size: 15pt;
+}
+.post h2,
+.comment h2 {
+  font-size: 13pt;
+}
+.post h3,
+.comment h3 {
+  font-size: 12pt;
+}
+.post h4,
+.comment h4,
+.post h5,
+.comment h5,
+.post h6,
+.comment h6 {
+  font-size: 10pt;
+}
+.post h1,
+.comment h1,
+.post h2,
+.comment h2,
+.post h3,
+.comment h3,
+.post h4,
+.comment h4,
+.post h5,
+.comment h5,
+.post h6,
+.comment h6 {
+  margin: 1em 0;
+}
+.post .title,
+.comment .title {
+  margin: 0;
+  line-height: 1.25;
+}
+.post .attachment-post-thumbnail,
+.comment .attachment-post-thumbnail {
+  margin-bottom: 1em;
+}
+.post time,
+.comment time {
+  font-size: 12pt;
+  display: inline-block;
+}
+.post img,
+.comment img {
+  max-width: 120%;
+  margin-left: -2em;
+  height: auto;
+}
+.post .alignleft,
+.comment .alignleft {
+  float: left;
+  margin-right: 1em;
+}
+.post .alignright,
+.comment .alignright {
+  float: right;
+  margin-left: 1em;
+}
+.post .wp-caption,
+.comment .wp-caption {
+  max-width: 100%;
+  margin-top: 2em !important;
+}
+.post .wp-caption.aligncenter,
+.comment .wp-caption.aligncenter {
+  margin: auto;
+}
+.post .wp-caption .wp-caption-text,
+.comment .wp-caption .wp-caption-text {
+  border-left: 1px solid lightgray;
+  padding: 1em;
+  background: #f2f2f2;
+}
+.post blockquote,
+.comment blockquote {
+  background-color: #f2f2f2;
+  border-left: 1px solid lightgrey;
+  padding: 1em;
+  margin-left: 2em;
+}
+.post blockquote + p cite,
+.comment blockquote + p cite {
+  margin-left: 2em;
+}
+.post table,
+.comment table {
+  width: 100%;
+}
+.post table thead,
+.comment table thead {
+  background-color: #f2f2f2;
+}
+.post table tbody tr,
+.comment table tbody tr {
+  border: 1px solid lightgrey;
+  border-left: 0;
+  border-right: 0;
+}
+.post table th,
+.comment table th,
+.post table td,
+.comment table td {
+  padding: 1em;
+  border-right: 1px solid lightgrey;
+}
+.post table th:last-child,
+.comment table th:last-child,
+.post table td:last-child,
+.comment table td:last-child {
+  border-right: none;
+}
+.post ul li,
+.comment ul li,
+.post ol li,
+.comment ol li {
+  margin: .25em 0;
+}
+.post pre,
+.comment pre {
+  background-color: #f2f2f2;
+  padding: 1em;
+}
+.post q,
+.comment q {
+  padding: 0;
+  background-color: transparent;
+}
+.post var,
+.comment var {
+  font-family: monospace;
+}
+.pagination {
+  margin-bottom: 5em;
+}
+.pagination .next {
+  float: right;
+}
+h1 + .post {
+  margin-top: 1em !important;
+}

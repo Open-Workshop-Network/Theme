@@ -1,0 +1,199 @@
+#homepage {
+	padding: 0;
+
+	.wrapper {
+		overflow: auto;
+	}
+
+	.filter {
+		box-shadow: @shadow;
+		background: #f3f3f3;
+		overflow: hidden;
+			
+		input[type=search] {
+			border: 1px solid lightGrey;
+			border-radius: 1em;
+			outline: none;
+			padding: .25em 0.75em 0.1em;
+			width: 100%;
+			box-sizing: border-box;
+
+			&:focus {
+				border: 1px solid grey;
+			}
+
+			&::after {
+				content: 'X';
+			}
+		}
+
+		#filter {
+			display: none;
+		}
+
+		h1 label:before {
+			content: '\25B6\FE0E';
+			vertical-align: middle;
+			display: inline-block;
+			margin-right: .5em;
+			cursor: pointer;
+			font-size: 10pt;
+			width: 10pt;
+		}
+
+		h1 label {
+			vertical-align: middle;
+			cursor: pointer;
+		}
+
+		input[type=checkbox]:checked + h1 label:before {
+			content: '\25BC\FE0E';
+		}
+
+		input[type=checkbox]:checked ~ .taxonomy {
+			height: auto;
+			margin-bottom: 2em;
+		}
+
+		.taxonomy {
+			height: 0;
+			overflow: hidden;
+			margin-bottom: 0;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			::-webkit-scrollbar {
+				width: 2%;
+			}
+
+			::-webkit-scrollbar-track {
+				-webkit-border-radius: 5px;
+				border-radius: 5px;
+				background: rgba( 0, 0, 0, 0.1 );
+			}
+
+			::-webkit-scrollbar-thumb {
+				-webkit-border-radius: 5px;
+				border-radius: 5px;
+				background: rgba( 0, 0, 0, 0.2 );
+			}
+
+			::-webkit-scrollbar-thumb:hover {
+				background: rgba( 0, 0, 0, 0.4 );
+			}
+
+			::-webkit-scrollbar-thumb:window-inactive {
+				background: rgba( 0, 0, 0, 0.05 );
+			}
+
+			h2 {
+				margin-top: 1em;
+
+				&:first-child {
+					margin-top: 2em;
+				}
+			}
+
+			.founded, .opened {
+				> div {
+					margin: 0 7.5px !important;
+				}
+
+				.noUi-connect {
+					background: grey !important;
+				}
+
+				span {
+					margin-top: 1em;
+					display: inline-block;
+				}
+			}
+		}
+
+		ul {
+			list-style: none;
+			padding: 0;
+
+			li {
+				margin-right: 1em;
+				line-height: 2;
+			}
+
+			li > ul {
+				margin-left: 1em;
+			}
+		}
+
+		label {
+			margin-left: .25em;
+		}
+
+	}
+
+	.about {
+		h1 {
+			margin-bottom: 1em;
+		}
+	}
+
+	.blog {
+		h1 {
+			margin-bottom: 1em;
+		}
+
+		nav {
+			font-size: 12pt;
+
+			a.previous + a.next {
+				float: right;
+			}
+		}
+	}
+
+	.links {
+		margin: 4em 0;
+	}
+
+	.about, .blog {
+		p {
+			line-height: 12pt;
+		}
+	}
+
+	.post {
+		padding: 0 0 3em 0 !important;
+	}
+}
+
+#homepage {
+	.noUi-horizontal {
+		height: 5px;
+	}
+	.noUi-handle {
+		width: 15px;
+		height: 15px;
+		left: -7.5px;
+		top: -7px;
+		border-radius: 100%;
+
+		&:after {
+			content: none;
+		}
+
+		&:before {
+			width: 3px;
+			height: 3px;
+			background: #f2f2f2;
+			left: 5px;
+			top: 5px;
+			border-radius: 100%;
+			box-shadow: 0 0 4px grey;
+		}
+
+		&:hover:before {
+			background: lightgrey;
+		}
+	}
+}

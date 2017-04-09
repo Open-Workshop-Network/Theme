@@ -1,0 +1,76 @@
+@blue: #ff0000;
+@shadow: 0 0 1em rgba( 0, 0, 0, 0.3 );
+
+html {
+	font-family: Helvetica;
+	font-size: 10pt;
+
+	a {
+		&:link, &:visited {
+			color: black;
+		}
+	}
+}
+
+footer {
+	padding-bottom: 2em;
+
+	img {
+		display: inline-block;
+		margin: 0 2em;
+	}
+
+	p {
+		font-size: 9pt;
+		display: inline-block;
+		margin: 1em 2em;
+		color: grey;
+	}
+}
+
+section {
+	.wrapper {
+		padding: 3em 2em 2em;
+	}
+
+	.wrapper.solo {
+		margin-top: 11em !important;
+		margin: 0 2em;
+	}
+
+	h1 {
+		margin: 0;
+		font-size: 17pt;
+	}
+
+	h2 {
+		font-size: 12pt;
+	}
+}
+
+/*
+ *  Site wide patches
+ *  =================
+ */
+
+.admin-bar {
+	.logo, #list {
+		margin-top: 32px;
+	}
+	.bar {
+		margin-top: 32px;
+	}
+}
+
+#list { display: none; }
+.browserupgrade, noscript { text-align: center; }
+#list .wrapper, #map .wrapper, .wrapper.solo { padding: 0; }
+#forum .wrapper { padding: 0 2em; }
+
+@import "header.less";
+@import "map.less";
+@import "workshop.less";
+@import "workshops.less";
+@import "homepage.less";
+@import "post.less";
+@import "comments.less";

@@ -1,0 +1,284 @@
+@media screen and ( min-width: 35em ) {
+	#about, body.home #blog {
+		width: 75%;
+	}
+
+	body.home #blog {
+		article {
+			margin: 0 0 4em;
+
+			h2, p {
+				margin-left: 0;
+				margin-right: 0;
+			}
+		}
+	}
+
+	body.blog #blog {
+		.wrapper {
+			margin: 0 2em;
+
+			h1 {
+				margin-left: 0;
+			}
+
+			article {
+
+				h1 {
+					width: 75%;
+				}
+
+				p {
+					width: 75%;
+					margin-left: 0;
+				}
+			}
+
+		}
+	}
+
+	header {
+		left: 2em;
+	}
+
+	#filter {
+		.taxonomy {
+			float: left;
+			width: 50%;
+		}
+	}
+
+	#workshop {
+		.desc {
+			width: 75%;
+		}
+
+		ul.links {
+			width: 75%;
+		}
+
+		.photos {
+			height: 25em;
+		}
+	}
+}
+
+@media screen and ( min-width: 50em ) {
+	header {
+		nav {
+			display: none;
+		}
+	}
+
+	#map {
+		height: 55em;
+	}
+
+	#filter {
+		.taxonomy {
+			float: left;
+			width: 33%;
+		}
+	}
+
+	#about, body.home #blog {
+		width: 50%;
+		float: left;
+		box-sizing: border-box;
+	}
+
+	#workshop {
+		.wrapper {
+			margin: 0 2em;
+		}
+		
+		h1, .desc, ul.links, .address, .tax, section.links, .long {
+			padding-left: 0;
+			padding-right: 0;
+		}
+		
+		.long {
+			width: 60%;
+		}
+
+		.photos {
+			height: 35em;
+		}
+
+		.tax, section.links {
+			width: 50%;
+			float: left;
+			box-sizing: border-box;
+		}
+
+		.tax {
+			padding-right: 1.5em;
+		}
+
+		section.links {
+			padding-left: 1.5em;
+		}
+	}
+
+	#workshops {
+		.wrapper {
+			margin: 0 2em;
+
+			> h1 {
+				margin: 0 0 1em;
+			}
+
+			article {
+				border-top: none;
+				border-left: .5em solid;
+				margin: 1.5em 0;
+				height: 128px;
+
+				h1 {
+					margin-top: 0;
+				}
+
+				p {
+					padding: 0;
+					margin: 0 1em;
+				}
+
+				img {
+					margin: 0;
+					display: inline-block;;
+					vertical-align: middle;
+				}
+
+				div {
+					width: 75%;
+					margin-left: 1em;
+					display: inline-block;
+					vertical-align: middle;
+				}
+			}
+
+			nav {
+				margin: 2em 0;
+
+				a:link, a:visited {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+
+	body.blog #blog {
+		.wrapper {
+			margin: 0 2em;
+
+			article {
+				width: 75%;
+
+				p {
+					width: 60%;
+				}
+			}
+
+		}
+	}
+}
+
+@media screen and ( min-width: 75em ) {
+	header {
+		width: 75em;
+		margin-left: -37.5em;
+		left: 50%;
+	}
+
+	body>.wrapper {
+		width: 75em;
+		margin: auto;
+	}
+
+	#map {
+		height: 65em;
+	}
+
+	#about {
+		padding-left: 0;
+	}
+
+	body.home #blog {
+		padding-right: 0;
+	}
+
+	body.blog #blog {
+		.wrapper {
+			width: 75em;
+			margin: auto;
+		}
+	}
+
+	#filter {
+		.taxonomy {
+			float: left;
+			width: 20%;
+		}
+
+		.wrapper {
+			width: 75em;
+			margin: auto;
+			display: block;
+			overflow: hidden;
+		}
+	}
+
+	.single {
+		#blog {
+			padding-left: 0;
+		}
+	}
+
+	#workshop {
+		.wrapper {
+			width: 75em;
+			margin: auto;
+			display: block;
+			overflow: hidden;
+			position: relative;
+		}
+
+		.desc {
+			width: 50%;
+		}
+
+		.address {
+			position: absolute;
+			top: 3em;
+			right: 0;
+			padding: 0;
+			text-align: right;
+		}
+
+		.photos {
+			height: 40em;
+		}
+
+		.tax {
+			padding-left: 0;
+		}
+
+		section.links {
+			padding: 0;
+		}
+	}
+
+	#workshops {
+		.wrapper {
+			width: 75em;
+			margin: auto;
+			display: block;
+		}
+	}
+}
+
+@media screen and ( max-width: 782px ) {
+	.admin-bar .logo {
+		margin-top: 46px;
+	}
+}

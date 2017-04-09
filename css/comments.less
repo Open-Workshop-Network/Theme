@@ -1,0 +1,86 @@
+#comments {
+	> ul, .children {
+		list-style: none;
+		padding: 0;
+		border-top: 1px solid lightgray;
+	}
+
+	.comment {
+		padding: 1em;
+		position: relative;
+		border-bottom: 1px solid lightgray;
+		background-color: white;
+		overflow: hidden;
+		margin: 0;
+	}
+
+	.comment-author {
+		img {
+			vertical-align: top;
+			padding-right: .5em;
+		}
+
+		cite {
+			font-style: normal;
+		}
+	}
+
+	.comment-meta {
+		position: absolute;
+		top: 1em;
+		right: 1em;
+		text-align: right;
+
+		a:link {
+			text-decoration: none;
+			color: grey;
+		}
+	}
+
+	.children {
+		border-left: 1px solid lightgrey;
+
+		.comment { border-top: none; }
+		.comment-meta a {
+			display: none;
+			&.comment-edit-link { display: inline; }
+		}
+
+		li { 
+			padding-right: 0;
+			
+			&:last-child {
+				padding-bottom: 0;
+				border-bottom: 0;
+			}
+		}
+	}
+
+	.g-recaptcha {
+		margin-bottom: 1em;
+	}
+
+	.pingback { display: none; }
+	.parent { padding-bottom: 0; }
+	.thread-alt, .alt { background-color: #f2f2f2; }
+	.depth-1 > ul { margin-right: -1em; }
+	// .depth-2, .depth-3, .depth-4, .depth-5, .depth-6, .depth-7, .depth-8, .depth-9, .depth-10 { margin-left: .1em }
+	.parent .reply, .children .reply { margin-bottom: 1em; }
+
+	#respond {
+		margin-bottom: 5em;
+		
+		h3 {
+			font-size: 14pt;
+		}
+
+		label {
+			margin-bottom: .5em;
+			display: block;
+		}
+
+		textarea {
+			width: 100%;
+		}
+	}
+}

@@ -1,0 +1,200 @@
+#map {
+	padding: 0;
+	width: 100%;
+	height: 30em;
+	box-shadow: 0 0 1em rgba( 0, 0, 0, 0.3 );;
+
+	.icon {
+		-webkit-filter: drop-shadow( 0 1px 2px rgba( 0, 0, 0, .1 ) );
+		filter: drop-shadow( 0 1px 2px rgba( 0, 0, 0, .1 ) );
+		
+		span {
+
+			img {
+				position: relative;
+				width: 40px;
+				height: 40px;
+				background: white;
+				border-radius: 2px;
+			}
+
+			&.top:after {
+				content: '';
+				border-left: 10px solid transparent;
+				border-right: 10px solid transparent;
+				border-top: 10px solid;
+				border-top-color: inherit;
+				position: absolute;
+				left: 10px;
+				bottom: -10px;
+			}
+
+			&.right:after {
+				content: '';
+				border-top: 10px solid transparent;
+				border-bottom: 10px solid transparent;
+				border-right: 10px solid;
+				border-right-color: inherit;
+				position: absolute;
+				left: -10px;
+				bottom: 10px;
+			}
+
+			&.bottom:before {
+				content: '';
+				border-left: 10px solid transparent;
+				border-right: 10px solid transparent;
+				border-bottom: 10px solid;
+				border-bottom-color: inherit;
+				position: absolute;
+				left: 10px;
+				top: -10px;
+			}
+
+			&.left:before {
+				content: '';
+				border-top: 10px solid transparent;
+				border-bottom: 10px solid transparent;
+				border-left: 10px solid;
+				border-left-color: inherit;
+				position: absolute;
+				right: -10px;
+				bottom: 10px;
+			}
+		}
+	}
+}
+
+.popup {
+	font-family: Helvetica;
+	font-weight: normal;
+	color: black;
+	line-height: 1.3em;
+
+	.leaflet-popup-close-button {
+		z-index: 1000;
+	}
+
+	.leaflet-popup-content-wrapper {
+		padding: 0;
+		overflow: hidden;
+	}
+
+	.leaflet-popup-content {
+		padding: 0 !important;
+		overflow: hidden;
+		position: relative;
+	}
+}
+
+.leaflet-popup-content-wrapper .wrapper, .wrapper.popup {
+	position: static;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	height: auto;
+	width: auto;
+
+	&:before {
+		border-left: 75px solid;
+		border-left-color: inherit;
+		content: '';
+		position: absolute;
+		height: 100%;
+		opacity: 0.25;
+		top: 0;
+		left: 0;
+	}
+
+	> img {
+		width: 75px;
+		height: 75px;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	> h1 {
+		font-size: 12pt;
+		margin: 1em 0 0.4em 5.7em;
+	}
+
+	.photo {
+		width: inherit;
+		height: 150px;
+		background-position: center center;
+		background-size: cover;
+		position: relative;
+	}
+
+	.admin {
+		margin: 0 1em .8em 6.8em;
+		font-size: 10pt;
+	}
+
+	.desc {
+		margin: 0 1em .8em 6.8em;
+		font-size: 10pt;
+	}
+
+	.disciplines {
+		margin: 0 1em .8em 6.8em;
+		font-size: 10pt;
+
+		strong {
+			margin-bottom: -.2em;
+			display: block;
+		}
+
+		label {
+			text-decoration: underline;
+			cursor: pointer;
+		}
+	}
+
+	.permalink {
+		margin: 0 1em 1em 6.8em;
+		font-size: 10pt;
+		display: inline-block;
+
+		&:link {
+			text-decoration: underline;
+		}
+
+		&:hover {
+			color: black;
+		}
+	}
+}
+
+body > .popup {
+	position: fixed !important;
+	background: white;
+	top: 0;
+	left: 0;
+	right: 0;
+	min-height: 100%;
+	z-index: 2000;
+
+	.photo {
+		height: 200px !important;
+	}
+
+	.close {
+		-webkit-background-size: 26px 260px;
+		-webkit-text-size-adjust: 100%;
+		background-image: url(https://api.tiles.mapbox.com/mapbox.js/v2.1.5/images/icons-000000@2x.png);
+		background-position: -3px -55px;
+		background-repeat: no-repeat;
+		background-size: 26px 260px;
+		display: block;
+		height: 20px;
+		opacity: 0.75;
+		position: absolute;
+		right: 0px;
+		text-indent: -11988px;
+		top: 0px;
+		width: 20px;
+	}
+}

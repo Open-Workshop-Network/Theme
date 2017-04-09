@@ -1,0 +1,74 @@
+header {
+	position: absolute;
+	top: 0;
+	z-index: 1001;
+
+	.logo {
+		display: inline-block;
+		box-shadow: @shadow;
+		background: white;
+		vertical-align: middle;
+
+		a:focus {
+			outline: none;
+		}
+
+		.home {
+			background: url( ../img/logo.png ) black;
+			background-size: 155px 80px;
+			height: 80px;
+			width: 155px;
+			display: block;
+			text-indent: -1000em;
+		}
+		.city {
+			display: block;
+			font-size: 12pt;
+			font-weight: bold;
+			margin: .3em .5em .15em .9em;
+
+			.switch {
+				margin: .175em 0 0 0;
+				width: 8px;
+				height: 8px;
+				background: url( ../img/options.gif );
+				text-indent: -1000em;
+				float: right;
+			}
+		}
+	}
+	nav {
+		display: inline-block;
+
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+
+			li {
+				font-size: 12pt;
+				display: inline-block;
+				margin-left: 2em;
+
+				a {
+					display: inline-block;
+					background: white;
+					box-shadow: @shadow;
+					border-radius: .4em;
+					padding: .75em .75em .5em .75em;
+					font-weight: bold;
+
+					&:link, &:visited {
+						text-decoration: none;
+					}
+
+					&:hover, &:focus {
+						outline: none;
+						color: white;
+						background: black;
+					}
+				}
+			}
+		}
+	}
+}

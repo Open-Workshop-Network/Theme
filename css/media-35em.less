@@ -1,0 +1,65 @@
+@media screen and ( min-width: 35em ) {
+	header {
+		left: 2em;
+	}
+
+	#homepage {
+		.about, .blog {
+			width: 75%;
+		}
+
+		.filter {
+			.taxonomy {
+				float: left;
+				width: 48%;
+				margin-right: 2%;
+				>ul {
+					max-height: 30em;
+					overflow: auto;
+				}
+			}
+		}
+		.blog {
+			article {
+				margin: 0 0 4em;
+
+				h2, p {
+					margin-left: 0;
+					margin-right: 0;
+				}
+			}
+		}	
+	}
+
+	#workshop {
+		.desc {
+			width: 75%;
+		}
+
+		ul.links {
+			width: 75%;
+		}
+
+		.photos {
+			height: 25em;
+		}
+
+		section {
+			width: 100%;
+			overflow: hidden;
+		}
+	}
+
+	.post {
+		img {
+			max-width: 100%;
+			margin-left: 0;
+		}
+	}
+
+	footer {
+		a, p {
+			max-width: 75%;
+		}
+	}
+}

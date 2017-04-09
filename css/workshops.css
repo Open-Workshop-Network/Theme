@@ -1,0 +1,37 @@
+#workshops article {
+  border-top: .5em solid;
+  margin: 2em 0;
+  box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.3);
+}
+#workshops article:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+#workshops article a:link,
+#workshops article a:visited {
+  text-decoration: none;
+}
+#workshops article h1 {
+  margin: .5em .8em;
+  font-size: 1.5em;
+  text-decoration: underline;
+}
+#workshops article p {
+  font-size: 1.25em;
+  line-height: 1.25;
+  padding: 0 1em 1em 1em;
+}
+#workshops article img {
+  margin: 0 1em;
+}
+#workshops nav {
+  margin: 2em 2em;
+}
+#workshops nav a {
+  font-size: 1.25em;
+  width: 50%;
+  display: inline-block;
+  text-align: right;
+}
+#workshops nav a:first-child {
+  text-align: left;
+}
