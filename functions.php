@@ -17,12 +17,12 @@
 				'edit_others_posts'			=> 'own_workshop_admin',
 				'publish_posts'				=> 'own_workshop_admin',
 				'read_private_posts'		=> 'own_workshop_admin',
-		        'delete_posts'				=> 'own_workshop_admin',
-		        'delete_private_posts'		=> 'own_workshop_admin',
-		        'delete_published_posts'	=> 'own_workshop_admin',
-		        'delete_others_posts'		=> 'own_workshop_admin',
-		        'edit_private_posts'		=> 'own_workshop_admin',
-		        'edit_published_posts'		=> 'own_workshop_admin'
+				'delete_posts'				=> 'own_workshop_admin',
+				'delete_private_posts'		=> 'own_workshop_admin',
+				'delete_published_posts'	=> 'own_workshop_admin',
+				'delete_others_posts'		=> 'own_workshop_admin',
+				'edit_private_posts'		=> 'own_workshop_admin',
+				'edit_published_posts'		=> 'own_workshop_admin'
 			);
 
 			public function __construct() {
@@ -31,6 +31,7 @@
 				add_action( 'init', array( &$this, 'create_disciplines_taxonomy' ) );
 				add_action( 'init', array( &$this, 'create_services_taxonomy' ) );
 				add_action( 'init', array( &$this, 'create_tools_taxonomy' ) );
+				add_action( 'acf/init', array( &$this, 'add_advanced_custom_fields' ) );
 				add_action( 'admin_init', array( &$this, 'add_role_and_capabilities' ) );
 
 				add_action( 'after_setup_theme', array( &$this, 'setup' ) );
@@ -61,7 +62,7 @@
 				update_option( 'medium_size_w', 512 );
 				update_option( 'medium_size_h', 512 );
 				update_option( 'large_size_w', 1024 );
-				update_option( 'large_size_h', 1024 );	
+				update_option( 'large_size_h', 1024 );
 			}
 
 			public function styles() {
@@ -71,7 +72,7 @@
 				wp_register_style( 'own-main-style', get_stylesheet_directory_uri() . '/css/main.css', array(), '1', 'all' );
 				wp_register_style( 'own-desktop-style', get_stylesheet_directory_uri() . '/css/desktop.css', array(), '1', 'all' );
 				wp_register_style( 'nouislider', get_stylesheet_directory_uri() . '/css/jquery.nouislider.min.css', array(), '1', 'all' );
-				
+
 				wp_enqueue_style( 'mapbox' );
 				wp_enqueue_style( 'normalize' );
 				wp_enqueue_style( 'nprogress' );
@@ -161,7 +162,7 @@
 					$properties['permalink'] = get_permalink();
 					$properties['colour'] = get_field( 'arrow_colour' );
 					$properties['location'] = get_field( 'arrow_location' );
-					
+
 					$properties['disciplines'] = "";
 					$disc_array = wp_get_post_terms( get_the_ID(), 'own_disciplines' );
 					$disc_count = count( $disc_array );
@@ -211,13 +212,13 @@
 					'read' => true,
 					'own_workshop' => true
 				) );
-				
+
 				$contributor = get_role( 'contributor' );
 				$contributor->add_cap( 'own_workshop' );
-				
+
 				$author = get_role( 'author' );
 				$author->add_cap( 'own_workshop' );
-				
+
 				$editor = get_role( 'editor' );
 				$editor->add_cap( 'own_workshop' );
 				$editor->add_cap( 'own_workshop_admin' );
@@ -272,7 +273,7 @@
 				);
 				register_post_type( 'own_workshop', $args );
 			}
-			
+
 			public function create_materials_taxonomy() {
 				$labels = array(
 					'name'                       => _x( 'Materials', 'Taxonomy General Name', 'text_domain' ),
@@ -310,7 +311,7 @@
 				);
 				register_taxonomy( 'own_materials', array( 'own_workshop' ), $args );
 			}
-			
+
 			public function create_disciplines_taxonomy() {
 				$labels = array(
 					'name'                       => _x( 'Discipline', 'Taxonomy General Name', 'text_domain' ),
@@ -348,7 +349,7 @@
 				);
 				register_taxonomy( 'own_disciplines', array( 'own_workshop' ), $args );
 			}
-			
+
 			public function create_services_taxonomy() {
 				$labels = array(
 					'name'                       => _x( 'Service', 'Taxonomy General Name', 'text_domain' ),
@@ -387,7 +388,7 @@
 
 				register_taxonomy( 'own_services', array( 'own_workshop' ), $args );
 			}
-			
+
 			public function create_tools_taxonomy() {
 				$labels = array(
 					'name'                       => _x( 'Tool', 'Taxonomy General Name', 'text_domain' ),
@@ -425,11 +426,576 @@
 				);
 				register_taxonomy( 'own_tools', array( 'own_workshop' ), $args );
 			}
+
+			public function add_advanced_custom_fields() {
+				if( function_exists('acf_add_local_field_group') ):
+
+					acf_add_local_field_group(array(
+						'key' => 'group_5508d3d59fb6d',
+						'title' => 'Homepage',
+						'fields' => array(
+							array(
+								'key' => 'field_5508d3db4c7d1',
+								'label' => 'Links',
+								'name' => 'links',
+								'type' => 'repeater',
+								'instructions' => '',
+								'required' => 0,
+								'conditional_logic' => 0,
+								'wrapper' => array(
+									'width' => '',
+									'class' => '',
+									'id' => '',
+								),
+								'min' => 1,
+								'max' => 5,
+								'layout' => 'table',
+								'button_label' => 'Add Link',
+								'sub_fields' => array(
+									array(
+										'key' => 'field_5508d3e74c7d2',
+										'label' => 'Title',
+										'name' => 'title',
+										'type' => 'text',
+										'instructions' => '',
+										'required' => 1,
+										'conditional_logic' => 0,
+										'wrapper' => array(
+											'width' => '',
+											'class' => '',
+											'id' => '',
+										),
+										'default_value' => '',
+										'placeholder' => '',
+										'prepend' => '',
+										'append' => '',
+										'maxlength' => '',
+										'readonly' => 0,
+										'disabled' => 0,
+									),
+									array(
+										'key' => 'field_5508d3fe4c7d3',
+										'label' => 'URI',
+										'name' => 'uri',
+										'type' => 'text',
+										'instructions' => '',
+										'required' => 1,
+										'conditional_logic' => 0,
+										'wrapper' => array(
+											'width' => '',
+											'class' => '',
+											'id' => '',
+										),
+										'default_value' => '',
+										'placeholder' => '',
+										'prepend' => '',
+										'append' => '',
+										'maxlength' => '',
+										'readonly' => 0,
+										'disabled' => 0,
+									),
+								),
+								'collapsed' => '',
+							),
+							array(
+								'key' => 'field_5508d4204c7d4',
+								'label' => 'Map Center',
+								'name' => 'map_center',
+								'type' => 'google_map',
+								'instructions' => '',
+								'required' => 1,
+								'conditional_logic' => 0,
+								'wrapper' => array(
+									'width' => '',
+									'class' => '',
+									'id' => '',
+								),
+								'center_lat' => '51.5075',
+								'center_lng' => '-0.1243',
+								'zoom' => 5,
+								'height' => 200,
+							),
+							array(
+								'key' => 'field_5508d44c4c7d5',
+								'label' => 'Map Zoom Level',
+								'name' => 'map_zoom_level',
+								'type' => 'number',
+								'instructions' => '',
+								'required' => 1,
+								'conditional_logic' => 0,
+								'wrapper' => array(
+									'width' => '',
+									'class' => '',
+									'id' => '',
+								),
+								'default_value' => 11,
+								'placeholder' => '',
+								'prepend' => '',
+								'append' => '',
+								'min' => 1,
+								'max' => 19,
+								'step' => '',
+								'readonly' => 0,
+								'disabled' => 0,
+							),
+						),
+						'location' => array(
+							array(
+								array(
+									'param' => 'page',
+									'operator' => '==',
+									'value' => '70',
+								),
+							),
+						),
+						'menu_order' => 0,
+						'position' => 'acf_after_title',
+						'style' => 'seamless',
+						'label_placement' => 'top',
+						'instruction_placement' => 'label',
+						'hide_on_screen' => array(
+							0 => 'custom_fields',
+						),
+						'active' => 1,
+						'description' => '',
+					));
+
+					acf_add_local_field_group(array(
+						'key' => 'group_54fa366764808',
+						'title' => 'Workshops',
+						'fields' => array(
+							array(
+								'key' => 'field_55567a4226b7c',
+								'label' => 'Opened',
+								'name' => 'opened',
+								'type' => 'date_picker',
+								'instructions' => 'Date workshop first opened.',
+								'required' => 1,
+								'conditional_logic' => 0,
+								'wrapper' => array(
+									'width' => '',
+									'class' => '',
+									'id' => '',
+								),
+								'display_format' => 'd/m/Y',
+								'return_format' => 'Y',
+								'first_day' => 1,
+							),
+							array(
+								'key' => 'field_54fa380bffd73',
+								'label' => 'Short Description',
+								'name' => 'description',
+								'type' => 'textarea',
+								'instructions' => 'Write a short 140 character description that charactarises your workshop.',
+								'required' => 1,
+								'conditional_logic' => 0,
+								'wrapper' => array(
+									'width' => '',
+									'class' => '',
+									'id' => '',
+								),
+								'default_value' => '',
+								'placeholder' => '',
+								'maxlength' => 140,
+								'rows' => 2,
+								'new_lines' => '',
+								'readonly' => 0,
+								'disabled' => 0,
+							),
+							array(
+								'key' => 'field_5523ebc696b5b',
+								'label' => 'Phone Number',
+								'name' => 'phone_number',
+								'type' => 'text',
+								'instructions' => 'Provide your public telephone number (if you have one).',
+								'required' => 0,
+								'conditional_logic' => 0,
+								'wrapper' => array(
+									'width' => '',
+									'class' => '',
+									'id' => '',
+								),
+								'default_value' => '',
+								'placeholder' => '',
+								'prepend' => '',
+								'append' => '',
+								'maxlength' => '',
+								'readonly' => 0,
+								'disabled' => 0,
+							),
+							array(
+								'key' => 'field_54fa31015c5aa',
+								'label' => 'URL',
+								'name' => 'url',
+								'type' => 'url',
+								'instructions' => 'Provide the URL of the workshop\'s website.',
+								'required' => 0,
+								'conditional_logic' => 0,
+								'wrapper' => array(
+									'width' => '',
+									'class' => '',
+									'id' => '',
+								),
+								'default_value' => '',
+								'placeholder' => '',
+							),
+							array(
+								'key' => 'field_54fa3082be7cb',
+								'label' => 'Pin Location',
+								'name' => 'location',
+								'type' => 'google_map',
+								'instructions' => 'Mark the exact location of the workshop\'s entrance.',
+								'required' => 1,
+								'conditional_logic' => 0,
+								'wrapper' => array(
+									'width' => '',
+									'class' => '',
+									'id' => '',
+								),
+								'center_lat' => '',
+								'center_lng' => '',
+								'zoom' => 16,
+								'height' => 200,
+							),
+							array(
+								'key' => 'field_5523ec59d4747',
+								'label' => 'Address',
+								'name' => 'address',
+								'type' => 'textarea',
+								'instructions' => 'Enter the address of your workshop, without the organisation\'s name.',
+								'required' => 1,
+								'conditional_logic' => 0,
+								'wrapper' => array(
+									'width' => '',
+									'class' => '',
+									'id' => '',
+								),
+								'default_value' => '',
+								'placeholder' => '',
+								'maxlength' => '',
+								'rows' => '',
+								'new_lines' => '',
+								'readonly' => 0,
+								'disabled' => 0,
+							),
+							array(
+								'key' => 'field_54fa37ffffd72',
+								'label' => 'Logo',
+								'name' => 'logo',
+								'type' => 'image',
+								'instructions' => 'Upload a square crop of the workshops logo. Ensure a 10% border of empty space to prevent the logo touching the edge of it\'s container.',
+								'required' => 1,
+								'conditional_logic' => 0,
+								'wrapper' => array(
+									'width' => '',
+									'class' => '',
+									'id' => '',
+								),
+								'return_format' => 'id',
+								'preview_size' => 'thumbnail',
+								'library' => 'uploadedTo',
+								'min_width' => 150,
+								'min_height' => 150,
+								'min_size' => '',
+								'max_width' => 1024,
+								'max_height' => 1024,
+								'max_size' => '',
+								'mime_types' => '',
+							),
+							array(
+								'key' => 'field_54fb8a40d739f',
+								'label' => 'Arrow Colour',
+								'name' => 'arrow_colour',
+								'type' => 'color_picker',
+								'instructions' => 'Select the primary colour of your brand as an accent colour on the map.',
+								'required' => 1,
+								'conditional_logic' => 0,
+								'wrapper' => array(
+									'width' => '',
+									'class' => '',
+									'id' => '',
+								),
+								'default_value' => '#000000',
+							),
+							array(
+								'key' => 'field_5569939e0886c',
+								'label' => 'Arrow Location',
+								'name' => 'arrow_location',
+								'type' => 'select',
+								'instructions' => '',
+								'required' => 1,
+								'conditional_logic' => 0,
+								'wrapper' => array(
+									'width' => '',
+									'class' => '',
+									'id' => '',
+								),
+								'choices' => array(
+									'top' => 'Top',
+									'right' => 'Right',
+									'bottom' => 'Bottom',
+									'left' => 'Left',
+								),
+								'default_value' => array(
+									'top' => 'top',
+								),
+								'allow_null' => 0,
+								'multiple' => 0,
+								'ui' => 0,
+								'ajax' => 0,
+								'placeholder' => '',
+								'disabled' => 0,
+								'readonly' => 0,
+								'return_format' => 'value',
+							),
+							array(
+								'key' => 'field_5523ebf896b5c',
+								'label' => 'Email Address',
+								'name' => 'email_address',
+								'type' => 'email',
+								'instructions' => 'Provide your public email address (if you have one).',
+								'required' => 0,
+								'conditional_logic' => 0,
+								'wrapper' => array(
+									'width' => '',
+									'class' => '',
+									'id' => '',
+								),
+								'default_value' => '',
+								'placeholder' => '',
+								'prepend' => '',
+								'append' => '',
+							),
+							array(
+								'key' => 'field_54fa31355c5ab',
+								'label' => 'Twitter',
+								'name' => 'twitter',
+								'type' => 'text',
+								'instructions' => 'Provide the handle of the workshop\'s Twitter account, if one exists.',
+								'required' => 0,
+								'conditional_logic' => 0,
+								'wrapper' => array(
+									'width' => '',
+									'class' => '',
+									'id' => '',
+								),
+								'default_value' => '',
+								'placeholder' => 'username',
+								'prepend' => '@',
+								'append' => '',
+								'maxlength' => '',
+								'readonly' => 0,
+								'disabled' => 0,
+							),
+							array(
+								'key' => 'field_54fa31a3878a8',
+								'label' => 'Facebook',
+								'name' => 'facebook',
+								'type' => 'text',
+								'instructions' => 'Provide the handle of the workshop\'s Facebook account, if one exists.',
+								'required' => 0,
+								'conditional_logic' => 0,
+								'wrapper' => array(
+									'width' => '',
+									'class' => '',
+									'id' => '',
+								),
+								'default_value' => '',
+								'placeholder' => 'workshopname',
+								'prepend' => 'http://facebook.com/',
+								'append' => '',
+								'maxlength' => '',
+								'readonly' => 0,
+								'disabled' => 0,
+							),
+							array(
+								'key' => 'field_55255802d6eb0',
+								'label' => 'Google+',
+								'name' => 'google+',
+								'type' => 'text',
+								'instructions' => 'Provide the handle of the workshop\'s Google+ page, if one exists.',
+								'required' => 0,
+								'conditional_logic' => 0,
+								'wrapper' => array(
+									'width' => '',
+									'class' => '',
+									'id' => '',
+								),
+								'default_value' => '',
+								'placeholder' => 'workshopname',
+								'prepend' => '+',
+								'append' => '',
+								'maxlength' => '',
+								'readonly' => 0,
+								'disabled' => 0,
+							),
+							array(
+								'key' => 'field_55256c40d6eb5',
+								'label' => 'Google Group',
+								'name' => 'google_group',
+								'type' => 'text',
+								'instructions' => 'Provide the handle of the workshop\'s Google Group email address, if one exists.',
+								'required' => 0,
+								'conditional_logic' => 0,
+								'wrapper' => array(
+									'width' => '',
+									'class' => '',
+									'id' => '',
+								),
+								'default_value' => '',
+								'placeholder' => 'workshop-name',
+								'prepend' => '',
+								'append' => '@googlegroups.com',
+								'maxlength' => '',
+								'readonly' => 0,
+								'disabled' => 0,
+							),
+							array(
+								'key' => 'field_552566f5d6eb2',
+								'label' => 'Instagram',
+								'name' => 'instagram',
+								'type' => 'text',
+								'instructions' => 'Provide the handle of the workshop\'s Instagram account, if one exists.',
+								'required' => 0,
+								'conditional_logic' => 0,
+								'wrapper' => array(
+									'width' => '',
+									'class' => '',
+									'id' => '',
+								),
+								'default_value' => '',
+								'placeholder' => 'workshopname',
+								'prepend' => 'instagram.com/',
+								'append' => '',
+								'maxlength' => '',
+								'readonly' => 0,
+								'disabled' => 0,
+							),
+							array(
+								'key' => 'field_55256c88d6eb6',
+								'label' => 'YouTube',
+								'name' => 'youtube',
+								'type' => 'text',
+								'instructions' => 'Provide the handle of the workshop\'s Facebook account, if one exists.',
+								'required' => 0,
+								'conditional_logic' => 0,
+								'wrapper' => array(
+									'width' => '',
+									'class' => '',
+									'id' => '',
+								),
+								'default_value' => '',
+								'placeholder' => 'workshopname',
+								'prepend' => 'youtube.com/',
+								'append' => '',
+								'maxlength' => '',
+								'readonly' => 0,
+								'disabled' => 0,
+							),
+							array(
+								'key' => 'field_5523ec1296b5d',
+								'label' => 'Long Description',
+								'name' => 'long_description',
+								'type' => 'wysiwyg',
+								'instructions' => 'Write a longer description about your space.',
+								'required' => 0,
+								'conditional_logic' => 0,
+								'wrapper' => array(
+									'width' => '',
+									'class' => '',
+									'id' => '',
+								),
+								'default_value' => '',
+								'tabs' => 'all',
+								'toolbar' => 'basic',
+								'media_upload' => 0,
+								'delay' => 0,
+							),
+							array(
+								'key' => 'field_54fa36a34bb7b',
+								'label' => 'Images',
+								'name' => 'images',
+								'type' => 'repeater',
+								'instructions' => 'Upload one of more images of the inside of the workshop.',
+								'required' => 1,
+								'conditional_logic' => 0,
+								'wrapper' => array(
+									'width' => '',
+									'class' => '',
+									'id' => '',
+								),
+								'min' => 1,
+								'max' => 5,
+								'layout' => 'table',
+								'button_label' => 'Add Image',
+								'sub_fields' => array(
+									array(
+										'key' => 'field_54fa36ac4bb7c',
+										'label' => 'Image',
+										'name' => 'image',
+										'type' => 'image',
+										'instructions' => '',
+										'required' => 0,
+										'conditional_logic' => 0,
+										'wrapper' => array(
+											'width' => '',
+											'class' => '',
+											'id' => '',
+										),
+										'return_format' => 'id',
+										'preview_size' => 'medium',
+										'library' => 'uploadedTo',
+										'min_width' => '',
+										'min_height' => '',
+										'min_size' => '',
+										'max_width' => '',
+										'max_height' => '',
+										'max_size' => '',
+										'mime_types' => '',
+									),
+								),
+								'collapsed' => '',
+							),
+						),
+						'location' => array(
+							array(
+								array(
+									'param' => 'post_type',
+									'operator' => '==',
+									'value' => 'own_workshop',
+								),
+							),
+						),
+						'menu_order' => 0,
+						'position' => 'normal',
+						'style' => 'seamless',
+						'label_placement' => 'left',
+						'instruction_placement' => 'label',
+						'hide_on_screen' => array(
+							0 => 'the_content',
+							1 => 'excerpt',
+							2 => 'custom_fields',
+							3 => 'discussion',
+							4 => 'comments',
+							5 => 'slug',
+							6 => 'format',
+							7 => 'page_attributes',
+							8 => 'featured_image',
+							9 => 'categories',
+							10 => 'tags',
+							11 => 'send-trackbacks',
+						),
+						'active' => 1,
+						'description' => '',
+					));
+
+				endif;
+			}
 		}
 
 		$OWN = new Open_Workshop_Network();
 	}
-	
+
 	function OWN_Theme_Tax_List( $tax ) {
 		$list = "";
 		$list_array = wp_get_post_terms( get_the_ID(), $tax );
