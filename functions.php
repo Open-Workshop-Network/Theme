@@ -5,24 +5,28 @@
 			var $tax_cap = array(
 				'assign_terms'				=> 'own_workshop',
 				'manage_terms'				=> 'own_workshop_admin',
-				'edit_terms'				=> 'own_workshop_admin',
+				'edit_terms'					=> 'own_workshop_admin',
 				'delete_terms'				=> 'own_workshop_admin'
 			);
 
 			var $post_cap = array(
+				'read_own_workshop'			=> 'own_workshop',
+				'read_private_posts'			=> 'own_workshop_admin',
+
 				'edit_post'					=> 'own_workshop',
-				'edit_posts'				=> 'own_workshop',
-				'read_own_workshop'			=> 'own_workshop_admin',
-				'delete_post'				=> 'own_workshop',
-				'edit_others_posts'			=> 'own_workshop_admin',
+				'edit_posts'					=> 'own_workshop',
+				'edit_others_posts'			=> 'own_workshop',
+				'edit_published_posts'		=> 'own_workshop_admin',
+				'edit_private_posts'			=> 'own_workshop_admin',
+
 				'publish_posts'				=> 'own_workshop_admin',
-				'read_private_posts'		=> 'own_workshop_admin',
+
+				'delete_post'				=> 'own_workshop',
 				'delete_posts'				=> 'own_workshop_admin',
-				'delete_private_posts'		=> 'own_workshop_admin',
-				'delete_published_posts'	=> 'own_workshop_admin',
-				'delete_others_posts'		=> 'own_workshop_admin',
-				'edit_private_posts'		=> 'own_workshop_admin',
-				'edit_published_posts'		=> 'own_workshop_admin'
+				'delete_others_posts'			=> 'own_workshop_admin',
+				'delete_published_posts'		=> 'own_workshop_admin',
+				'delete_private_posts'		=> 'own_workshop_admin'
+
 			);
 
 			public function __construct() {
@@ -1009,5 +1013,11 @@
 		}
 		echo $list;
 	}
+
+	function OWN_Google_API_key() {
+		acf_update_setting( 'google_api_key', 'AIzaSyBF7_KFh38Hn1bhVAr32DLryzeNaOqch80' );
+	}
+	add_action( 'acf/init', 'OWN_Google_API_key' );
+
 
 ?>
