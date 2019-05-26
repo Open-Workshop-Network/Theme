@@ -6,7 +6,7 @@
 				<h1><?php the_title() ?></h1>
 
 				<p class="desc"><?php the_field( 'description' ) ?></p>
-				
+
 				<?php $url = parse_url( get_field( 'url' ) ) ?>
 				<ul class="links">
 					<?php if ( get_field( 'phone_number' ) ): ?><li><a href="tel:<?php echo str_replace( ' ', '', get_field( 'phone_number' ) ) ?>"><?php echo preg_replace( "/(0[1|3|5|7|8](?:\d){3})(\d{5,})|(020)(\d{4})(\d{4,})/", "$1$3 $2$4 $5", str_replace( ' ', '', get_field( 'phone_number' ) ) ) ?></a></li><?php endif ?>
@@ -22,12 +22,12 @@
 							<?php
 								$current = $i + 1;
 								$next = $current + 1;
-								
+
 								if ( $next > count( get_field( 'images' ) ) )
 									$next = 1;
 
 								$prev = $current - 1;
-								
+
 								if ( $prev < 1 )
 									$prev = count( get_field( 'images' ) );
 							?>
@@ -48,7 +48,7 @@
 					</ul>
 				<?php endif ?>
 
-				<?php 
+				<?php
 					$service_count = count( wp_get_post_terms( get_the_ID(), 'own_services' ) );
 					$discipline_count = count( wp_get_post_terms( get_the_ID(), 'own_disciplines' ) );
 					$material_count = count( wp_get_post_terms( get_the_ID(), 'own_materials' ) );
@@ -65,12 +65,12 @@
 							<h2>Disciplines</h2>
 							<p><?php OWN_Theme_Tax_List( 'own_disciplines' ) ?></p>
 						<?php endif ?>
-						
+
 						<?php if ( $material_count > 0 ): ?>
 							<h2>Materials</h2>
 							<p><?php OWN_Theme_Tax_List( 'own_materials' ) ?></p>
 						<?php endif ?>
-						
+
 						<?php if ( $tool_count > 0 ): ?>
 							<h2>Tools</h2>
 							<p><?php OWN_Theme_Tax_List( 'own_tools' ) ?></p>
@@ -84,7 +84,6 @@
 						<ul>
 							<?php if ( get_field( 'twitter' ) ): ?><li class="icon twitter"><a href="http://twitter.com/<?php the_field( 'twitter' ) ?>" target="_blank">@<?php the_field( 'twitter' ) ?></a></li><?php endif ?>
 							<?php if ( get_field( 'facebook' ) ): ?><li class="icon facebook"><a href="http://fb.com/<?php the_field( 'facebook' ) ?>" target="_blank">fb.com/<?php the_field( 'facebook' ) ?></a></li><?php endif ?>
-							<?php if ( get_field( 'google+' ) ): ?><li class="icon gplus"><a href="http://google.com/+<?php the_field( 'google+' ) ?>" target="_blank">google.com/+<?php the_field( 'google+' ) ?></a></li><?php endif ?>
 							<?php if ( get_field( 'instagram' ) ): ?><li class="icon instagram"><a href="http://instagram.com/<?php the_field( 'instagram' ) ?>" target="_blank">instagram.com/<?php the_field( 'instagram' ) ?></a></li><?php endif ?>
 							<?php if ( get_field( 'google_group' ) ): ?><li class="icon ggroup"><a href="http://groups.google.com/d/forum/<?php the_field( 'google_group' ) ?>" target="_blank">groups.google.com/d/forum/<?php the_field( 'google_group' ) ?></a></li><?php endif ?>
 							<?php if ( get_field( 'youtube' ) ): ?><li class="icon youtube"><a href="http://youtube.com/<?php the_field( 'youtube' ) ?>" target="_blank">youtube.com/channel/<?php the_field( 'youtube' ) ?></a></li><?php endif ?>

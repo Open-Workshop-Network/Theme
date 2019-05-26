@@ -3,30 +3,22 @@
 
 		class Open_Workshop_Network {
 			var $tax_cap = array(
-				'assign_terms'				=> 'own_workshop',
-				'manage_terms'				=> 'own_workshop_admin',
-				'edit_terms'					=> 'own_workshop_admin',
-				'delete_terms'				=> 'own_workshop_admin'
+				'assign_terms'			=> 'own_assign_terms',
+				'manage_terms'			=> 'own_manage_terms',
+				'edit_terms'			=> 'own_edit_terms',
+				'delete_terms'			=> 'own_delete_terms'
 			);
 
 			var $post_cap = array(
-				'read_own_workshop'			=> 'own_workshop',
-				'read_private_posts'			=> 'own_workshop_admin',
+				'read_post'             => 'read_workshop',
+				'delete_post'           => 'delete_workshop',
 
-				'edit_post'					=> 'own_workshop',
-				'edit_posts'					=> 'own_workshop',
-				'edit_others_posts'			=> 'own_workshop',
-				'edit_published_posts'		=> 'own_workshop_admin',
-				'edit_private_posts'			=> 'own_workshop_admin',
+				'edit_post'             => 'edit_workshop',
+				'edit_posts'            => 'edit_workshops',
+				'edit_others_posts'     => 'edit_others_workshops',
 
-				'publish_posts'				=> 'own_workshop_admin',
-
-				'delete_post'				=> 'own_workshop',
-				'delete_posts'				=> 'own_workshop_admin',
-				'delete_others_posts'			=> 'own_workshop_admin',
-				'delete_published_posts'		=> 'own_workshop_admin',
-				'delete_private_posts'		=> 'own_workshop_admin'
-
+				'publish_posts'         => 'publish_workshops',
+				'read_private_posts'    => 'read_private_workshops',
 			);
 
 			public function __construct() {
@@ -37,6 +29,7 @@
 				add_action( 'init', array( &$this, 'create_tools_taxonomy' ) );
 				add_action( 'acf/init', array( &$this, 'add_advanced_custom_fields' ) );
 				add_action( 'admin_init', array( &$this, 'add_role_and_capabilities' ) );
+				// add_action( 'switch_theme', array( &$this, 'add_role_and_capabilities' ) );
 
 				add_action( 'after_setup_theme', array( &$this, 'setup' ) );
 				add_action( 'wp_enqueue_scripts', array( &$this, 'styles' ) );
@@ -213,23 +206,26 @@
 
 			public function add_role_and_capabilities() {
 				add_role( 'owner', 'Workshop Owner', array(
+					'own_assign_terms' => true,
+					'edit_workshop' => true,
+					'edit_workshops' => true,
+					'read_workshop' => true,
 					'read' => true,
-					'own_workshop' => true
+					'upload_files' => true
 				) );
 
-				$contributor = get_role( 'contributor' );
-				$contributor->add_cap( 'own_workshop' );
-
-				$author = get_role( 'author' );
-				$author->add_cap( 'own_workshop' );
-
-				$editor = get_role( 'editor' );
-				$editor->add_cap( 'own_workshop' );
-				$editor->add_cap( 'own_workshop_admin' );
-
 				$administrator = get_role( 'administrator' );
-				$administrator->add_cap( 'own_workshop' );
-				$administrator->add_cap( 'own_workshop_admin' );
+				$administrator->add_cap( 'own_assign_terms' );
+				$administrator->add_cap( 'own_manage_terms' );
+				$administrator->add_cap( 'own_edit_terms' );
+				$administrator->add_cap( 'own_delete_terms' );
+				$administrator->add_cap( 'read_workshop' );
+				$administrator->add_cap( 'delete_workshop' );
+				$administrator->add_cap( 'edit_workshop' );
+				$administrator->add_cap( 'edit_workshops' );
+				$administrator->add_cap( 'edit_others_workshops' );
+				$administrator->add_cap( 'publish_workshops' );
+				$administrator->add_cap( 'read_private_workshops' );
 			}
 
 			public function create_workshop_post_type() {
@@ -807,27 +803,6 @@
 								'default_value' => '',
 								'placeholder' => 'workshopname',
 								'prepend' => 'http://facebook.com/',
-								'append' => '',
-								'maxlength' => '',
-								'readonly' => 0,
-								'disabled' => 0,
-							),
-							array(
-								'key' => 'field_55255802d6eb0',
-								'label' => 'Google+',
-								'name' => 'google+',
-								'type' => 'text',
-								'instructions' => 'Provide the handle of the workshop\'s Google+ page, if one exists.',
-								'required' => 0,
-								'conditional_logic' => 0,
-								'wrapper' => array(
-									'width' => '',
-									'class' => '',
-									'id' => '',
-								),
-								'default_value' => '',
-								'placeholder' => 'workshopname',
-								'prepend' => '+',
 								'append' => '',
 								'maxlength' => '',
 								'readonly' => 0,

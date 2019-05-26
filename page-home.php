@@ -108,7 +108,7 @@
 			<?php while ( have_posts() ) : the_post(); ?>
 				<section class="about">
 					<h1><?php the_title() ?></h1>
-					<p><?php echo get_the_content() ?></p>
+					<p><?php the_content() ?></p>
 				</section>
 				<section class="links">
 					<h1>Links</h1>
