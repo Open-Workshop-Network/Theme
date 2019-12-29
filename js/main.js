@@ -266,8 +266,8 @@ function createPopup( layer ) {
 		content += '<a class="permalink" href="' + marker.url + '">Website</a>';
 
 	// Disciplines
-	if ( marker.disciplines !== undefined && marker.disciplines != "" )
-		content += '<p class="disciplines"><strong>Disciplines</strong>' + marker.disciplines + '</p>';
+	// if ( marker.disciplines !== undefined && marker.disciplines != "" )
+	// 	content += '<p class="disciplines"><strong>Disciplines</strong>' + marker.disciplines + '</p>';
 
 	// More info
 	if ( marker.permalink != undefined )
