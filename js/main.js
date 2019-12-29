@@ -21,7 +21,7 @@ jQuery( document ).ready( function() {
 	} );
 
 	L.mapbox.accessToken = 'pk.eyJ1IjoidW5rbm93bmRvbWFpbiIsImEiOiJOMUxIcm1RIn0.801sde-cFjqY2gtBTHm-zA';
-	
+
 	if ( jQuery( '#map' ).length > 0 ) {
 
 		// Initialise map
@@ -61,7 +61,7 @@ jQuery( document ).ready( function() {
 				} );
 			}
 		} );
-		
+
 		// Enable filter checkboxes
 		jQuery( '#homepage .filter input[type=checkbox]' ).on( 'change', setFilter );
 	}
@@ -164,7 +164,7 @@ function setFilter() {
 		var items = jQuery( this ).attr( 'id' ).split( '_' );
 		services.push( items[items.length-1] );
 	} );
-	
+
 	// Find disciplines checkboxes
 	jQuery( '.disciplines input[type=checkbox]:checked' ).each( function( item ) {
 		var items = jQuery( this ).attr( 'id' ).split( '_' );
@@ -182,7 +182,7 @@ function setFilter() {
 		var items = jQuery( this ).attr( 'id' ).split( '_' );
 		tools.push( items[items.length-1] );
 	} );
-	
+
 	rebuildMap();
 }
 
@@ -199,7 +199,7 @@ function filter( marker ) {
 	// Filter out markers without any taxonomies
 	if ( marker.properties.taxonomies === undefined )
 		return false;
-	
+
 	// Filter for services
 	if ( marker.properties.taxonomies.services !== undefined ) {
 		for ( i in services ) {
@@ -209,7 +209,7 @@ function filter( marker ) {
 	} else {
 		return false;
 	}
-	
+
 	// Filter for disciplines
 	if ( marker.properties.taxonomies.disciplines !== undefined ) {
 		for ( i in disciplines ) {
@@ -239,7 +239,7 @@ function filter( marker ) {
 	} else {
 		return false;
 	}
-	
+
 	// Show it
 	return true;
 }
@@ -260,6 +260,10 @@ function createPopup( layer ) {
 	// Description text
 	if ( marker.text !== undefined )
 		content += '<p class="desc">' + marker.text + '</p>';
+
+	// Website
+	if ( marker.url != undefined )
+		content += '<a class="permalink" href="' + marker.url + '">Website</a>';
 
 	// Disciplines
 	if ( marker.disciplines !== undefined && marker.disciplines != "" )
@@ -297,6 +301,6 @@ function createPopup( layer ) {
 		autoPanPaddingTopLeft: L.point( 0, 125 ),
 		autoPanPaddingBottomRight: L.point( 0, 25 )
 	} ).setContent( content );
-	
+
 	layer.bindPopup( popup );
 }

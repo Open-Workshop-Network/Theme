@@ -130,7 +130,7 @@
 			public function ajax() {
 				header( "Content-Type: application/json" );
 
-				$query = new WP_Query( "post_type=OWN_Workshop&posts_per_page=-1" );
+				$query = new WP_Query( "post_type=OWN_Workshop&posts_per_page=-1&post_status=publish" );
 				$output = array(
 					"type" => "FeatureCollection",
 					"features" => [],
@@ -150,6 +150,7 @@
 					$properties['name'] = get_the_title();
 					$properties['icon'] = wp_get_attachment_thumb_url( get_field( 'logo' ) );
 					$properties['text'] = get_field( 'description' );
+					$properties['url'] = get_field( 'url' );
 
 					$properties['opened'] = get_field( 'opened' );
 

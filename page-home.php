@@ -24,8 +24,7 @@
 	<section id="homepage">
 		<section class="filter">
 			<div class="wrapper">
-				<input id="filter" type="checkbox" />
-				<h1><label for="filter">Filter</label></h1>
+				<h1>Filter</h1>
 				<div class="taxonomy other">
 					<h2>Search</h2>
 					<p><input type="search" placeholder="Search" /></p>
@@ -103,7 +102,7 @@
 				<?php endif ?>
 			</div>
 		</section>
-		
+
 		<div class="wrapper">
 			<?php while ( have_posts() ) : the_post(); ?>
 				<section class="about">
@@ -114,7 +113,7 @@
 					<h1>Links</h1>
 					<?php $links = get_field( 'links' ) ?>
 					<?php foreach ( $links as $link ): ?>
-						<p><h2><a href="<?php echo $link['uri'] ?>"><?php echo $link['title'] ?></a></h2></p>	
+						<p><h2><a href="<?php echo $link['uri'] ?>"><?php echo $link['title'] ?></a></h2></p>
 					<?php endforeach ?>
 				</section>
 			<?php endwhile ?>
