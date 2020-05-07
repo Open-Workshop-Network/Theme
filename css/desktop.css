@@ -290,12 +290,14 @@
 }
 @media (prefers-color-scheme: dark) {
   html,
-  #homepage .filter {
+  #homepage .filter,
+  .leaflet-container {
     background: #323232;
     color: white;
   }
   html input[type="search"],
-  #homepage .filter input[type="search"] {
+  #homepage .filter input[type="search"],
+  .leaflet-container input[type="search"] {
     background: #1e1e1e;
   }
   html a:link,
