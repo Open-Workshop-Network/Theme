@@ -63,7 +63,7 @@
 			}
 
 			public function styles() {
-				wp_register_style( 'mapbox', 'https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.css', array(), '1', 'all' );
+				wp_register_style( 'mapbox', 'https://api.tiles.mapbox.com/mapbox.js/v3.3.1/mapbox.css', array(), '1', 'all' );
 				wp_register_style( 'normalize', get_stylesheet_directory_uri() . '/css/normalize.min.css', array(), '1', 'all' );
 				wp_register_style( 'nprogress', get_stylesheet_directory_uri() . '/css/nprogress.css', array(), '1', 'all' );
 				wp_register_style( 'own-main-style', get_stylesheet_directory_uri() . '/css/main.css', array(), '1', 'all' );
@@ -79,7 +79,7 @@
 			}
 
 			public function scripts() {
-				wp_register_script( 'mapbox', 'https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.js' );
+				wp_register_script( 'mapbox', 'https://api.tiles.mapbox.com/mapbox.js/v3.3.1/mapbox.js' );
 				wp_register_script( 'own-main', get_stylesheet_directory_uri() . '/js/main.js' );
 				wp_register_script( 'fitvids', get_stylesheet_directory_uri() . '/js/jquery.fitvids.js' );
 				wp_register_script( 'nprogress', get_stylesheet_directory_uri() . '/js/nprogress.js' );
