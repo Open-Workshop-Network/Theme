@@ -1,0 +1,53 @@
+@dark-bg: #323232;
+@dark-hi: #1e1e1e;
+
+@media (prefers-color-scheme: dark) {
+	html,
+	#homepage .filter {
+		background: @dark-bg;
+		color: white;
+
+		input[type="search"] {
+			background: @dark-hi;
+		}
+	}
+
+	html a:link, html a:visited {
+		color: white;
+	}
+
+	#list .wrapper {
+		> div {
+			background: @dark-bg;
+			color: white;
+
+			span {
+				color: @dark-hi;
+				background: white;
+			}
+
+			h1 {
+				border-bottom: @dark-hi;
+
+				&:hover {
+					background: @dark-hi;
+				}
+			}
+
+			ul {
+				li {
+					border-bottom: 1px solid @dark-hi;
+
+					&:hover {
+						background: @dark-hi;
+					}
+				}
+			}
+		}
+	}
+
+	.leaflet-popup-content-wrapper, .map-legends, .map-tooltip, .popup {
+		background: @dark-bg !important;
+		color: white;
+	}
+}

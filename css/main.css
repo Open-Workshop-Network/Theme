@@ -564,6 +564,19 @@ body > .popup .close {
 #homepage .filter input[type=search]::after {
   content: 'X';
 }
+#homepage .filter h1 label:before {
+  content: '\25B6\FE0E';
+  vertical-align: middle;
+  display: inline-block;
+  margin-right: 0.5em;
+  cursor: pointer;
+  font-size: 10pt;
+  width: 10pt;
+}
+#homepage .filter h1 label {
+  vertical-align: middle;
+  cursor: pointer;
+}
 #homepage .filter .taxonomy {
   height: auto;
   overflow: hidden;

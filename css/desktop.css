@@ -288,3 +288,45 @@
     margin-top: 46px;
   }
 }
+@media (prefers-color-scheme: dark) {
+  html,
+  #homepage .filter {
+    background: #323232;
+    color: white;
+  }
+  html input[type="search"],
+  #homepage .filter input[type="search"] {
+    background: #1e1e1e;
+  }
+  html a:link,
+  html a:visited {
+    color: white;
+  }
+  #list .wrapper > div {
+    background: #323232;
+    color: white;
+  }
+  #list .wrapper > div span {
+    color: #1e1e1e;
+    background: white;
+  }
+  #list .wrapper > div h1 {
+    border-bottom: #1e1e1e;
+  }
+  #list .wrapper > div h1:hover {
+    background: #1e1e1e;
+  }
+  #list .wrapper > div ul li {
+    border-bottom: 1px solid #1e1e1e;
+  }
+  #list .wrapper > div ul li:hover {
+    background: #1e1e1e;
+  }
+  .leaflet-popup-content-wrapper,
+  .map-legends,
+  .map-tooltip,
+  .popup {
+    background: #323232 !important;
+    color: white;
+  }
+}
