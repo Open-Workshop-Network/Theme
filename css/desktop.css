@@ -324,10 +324,11 @@
   #list .wrapper > div ul li:hover {
     background: #1e1e1e;
   }
-  .leaflet-popup-content-wrapper,
-  .map-legends,
-  .map-tooltip,
-  .popup {
+  .leaflet-popup-content-wrapper {
+    background: #323232 !important;
+    color: white;
+  }
+  body > .popup {
     background: #323232 !important;
     color: white;
   }
