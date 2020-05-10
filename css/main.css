@@ -62,13 +62,15 @@ noscript {
 header {
   position: absolute;
   top: 0;
-  z-index: 1001;
+  z-index: 1000;
+  pointer-events: none;
 }
 header .logo {
   display: inline-block;
   box-shadow: 0 0 1em rgba(0, 0, 0, 0.3);
   background: white;
   vertical-align: middle;
+  pointer-events: all;
 }
 header .logo a:focus {
   outline: none;
