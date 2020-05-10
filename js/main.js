@@ -31,13 +31,15 @@ jQuery(document).ready(() => {
 		darkMap = L.mapbox.styleLayer('mapbox://styles/unknowndomain/ck9ws2q800qmd1jlj43a59w9e')
 		lightMap = L.mapbox.styleLayer('mapbox://styles/unknowndomain/ck9wrkd4206hs1ittxlqu8sod')
 		detectDarkmode(window.matchMedia('(prefers-color-scheme: dark)'))
-		map.setView([OWN.map.center.lat, OWN.map.center.lng], OWN.map.zoom - (window.matchMedia('(min-width: 35em)').matches ? 0 : 2))
+		map.setView([OWN.map.center.lat, OWN.map.center.lng], OWN.map.zoom)
 		map.scrollWheelZoom.disable()
-		map.touchZoom.disable()
 		map.zoomControl.remove()
 
-		if (window.matchMedia('(max-width: 75em)').matches)
+		if (window.matchMedia('(max-width: 50em)').matches)
 			map.dragging.disable()
+
+		if (window.matchMedia('(min-width: 75em)').matches)
+			map.setZoom(parseInt(OWN.map.zoom)+1)
 
 		// Add zoom controls
 		new L.Control.Zoom({position: 'bottomright'}).addTo(map)
