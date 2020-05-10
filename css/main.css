@@ -46,6 +46,10 @@ section h2 {
 }
 #list {
   display: none;
+  pointer-events: none;
+}
+#list .wrapper > div {
+  pointer-events: all;
 }
 .browserupgrade,
 noscript {

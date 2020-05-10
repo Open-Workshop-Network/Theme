@@ -62,7 +62,16 @@ section {
 	}
 }
 
-#list { display: none; }
+#list {
+	display: none;
+	pointer-events: none;
+
+	.wrapper {
+		> div {
+			pointer-events: all;
+		}
+	}
+}
 .browserupgrade, noscript { text-align: center; }
 #list .wrapper, #map .wrapper, .wrapper.solo { padding: 0; }
 #forum .wrapper { padding: 0 2em; }
