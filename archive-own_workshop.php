@@ -14,8 +14,8 @@
 				</article>
 			<?php endwhile ?>
 			<nav>
-				<?php next_posts_link( 'Next' ) ?>
-				<?php previous_posts_link( 'Previous' ) ?>
+				<span><?php previous_posts_link( 'Previous' ) ?></span>
+				<span><?php next_posts_link( 'Next' ) ?></span>
 			</nav>
 		</div>
 	</section>

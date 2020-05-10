@@ -32,14 +32,17 @@
 
 	nav {
 		margin: 2em 2em;
-		
-		a {
-			font-size: 1.25em;
+
+		span {
 			width: 50%;
 			display: inline-block;
 			text-align: right;
-
+			float: right;
+			a {
+				font-size: 1.25em;
+			}
 			&:first-child {
+				float:none;
 				text-align: left;
 			}
 		}

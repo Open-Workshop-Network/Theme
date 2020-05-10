@@ -530,13 +530,17 @@ body > .popup .close {
 #workshops nav {
   margin: 2em 2em;
 }
-#workshops nav a {
-  font-size: 1.25em;
+#workshops nav span {
   width: 50%;
   display: inline-block;
   text-align: right;
+  float: right;
 }
-#workshops nav a:first-child {
+#workshops nav span a {
+  font-size: 1.25em;
+}
+#workshops nav span:first-child {
+  float: none;
   text-align: left;
 }
 #homepage {
