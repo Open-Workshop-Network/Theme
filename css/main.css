@@ -526,6 +526,8 @@ body > .popup .close {
 }
 #workshops article img {
   margin: 0 1em;
+  max-width: 128px;
+  max-height: 128px;
 }
 #workshops nav {
   margin: 2em 2em;
