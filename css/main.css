@@ -373,39 +373,43 @@ body > .popup .close {
   display: inline-block;
   height: 20px;
   width: 20px;
-  background-image: url("../img/social-icons.png");
   vertical-align: middle;
   margin-right: 0.5em;
 }
 #workshop section.tax ul .icon.twitter:before,
 #workshop section.links ul .icon.twitter:before,
 #workshop .long ul .icon.twitter:before {
-  background-position: 0px 0px;
+  background-image: url("../img/twitter.svg");
 }
 #workshop section.tax ul .icon.facebook:before,
 #workshop section.links ul .icon.facebook:before,
 #workshop .long ul .icon.facebook:before {
-  background-position: -21px 0px;
+  background-image: url("../img/facebook.svg");
 }
 #workshop section.tax ul .icon.instagram:before,
 #workshop section.links ul .icon.instagram:before,
 #workshop .long ul .icon.instagram:before {
-  background-position: -42px 0px;
-}
-#workshop section.tax ul .icon.gplus:before,
-#workshop section.links ul .icon.gplus:before,
-#workshop .long ul .icon.gplus:before {
-  background-position: 0px -21px;
+  background-image: url("../img/instagram.svg");
 }
 #workshop section.tax ul .icon.ggroup:before,
 #workshop section.links ul .icon.ggroup:before,
 #workshop .long ul .icon.ggroup:before {
-  background-position: -21px -21px;
+  background-image: url("../img/google-groups.svg");
 }
 #workshop section.tax ul .icon.youtube:before,
 #workshop section.links ul .icon.youtube:before,
 #workshop .long ul .icon.youtube:before {
-  background-position: -42px -21px;
+  background-image: url("../img/youtube.svg");
+}
+#workshop section.tax ul .icon.tiktok:before,
+#workshop section.links ul .icon.tiktok:before,
+#workshop .long ul .icon.tiktok:before {
+  background-image: url("../img/tiktok.svg");
+}
+#workshop section.tax ul .icon.bluesky:before,
+#workshop section.links ul .icon.bluesky:before,
+#workshop .long ul .icon.bluesky:before {
+  background-image: url("../img/bluesky.svg");
 }
 #workshop .photos {
   list-style-type: none;
