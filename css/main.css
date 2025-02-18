@@ -87,20 +87,6 @@ header .logo .home {
   display: block;
   text-indent: -1000em;
 }
-header .logo .city {
-  display: block;
-  font-size: 12pt;
-  font-weight: bold;
-  margin: 0.3em 0.5em 0.15em 0.9em;
-}
-header .logo .city .switch {
-  margin: 0.175em 0 0 0;
-  width: 8px;
-  height: 8px;
-  background: url(../img/options.gif );
-  text-indent: -1000em;
-  float: right;
-}
 header nav {
   display: inline-block;
 }
