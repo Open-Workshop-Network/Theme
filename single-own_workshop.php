@@ -84,7 +84,7 @@
 						<ul>
 							<?php if ( get_field( 'tiktok' ) ): ?><li class="icon tiktok"><a href="http://tiktok.com/<?php the_field( 'tiktok' ) ?>" target="_blank">@<?php the_field( 'tiktok' ) ?></a></li><?php endif ?>
 							<?php if ( get_field( 'instagram' ) ): ?><li class="icon instagram"><a href="http://instagram.com/<?php the_field( 'instagram' ) ?>" target="_blank">instagram.com/<?php the_field( 'instagram' ) ?></a></li><?php endif ?>
-							<?php if ( get_field( 'youtube' ) ): ?><li class="icon youtube"><a href="http://youtube.com/<?php the_field( 'youtube' ) ?>" target="_blank">youtube.com/channel/<?php the_field( 'youtube' ) ?></a></li><?php endif ?>
+							<?php if ( get_field( 'youtube' ) ): ?><li class="icon youtube"><a href="http://youtube.com/<?php the_field( 'youtube' ) ?>" target="_blank">youtube.com/<?php the_field( 'youtube' ) ?></a></li><?php endif ?>
 							<?php if ( get_field( 'facebook' ) ): ?><li class="icon facebook"><a href="http://fb.com/<?php the_field( 'facebook' ) ?>" target="_blank">fb.com/<?php the_field( 'facebook' ) ?></a></li><?php endif ?>
 							<?php if ( get_field( 'bluesky' ) ): ?><li class="icon bluesky"><a href="http://bsky.app/profile/<?php the_field( 'bluesky' ) ?>" target="_blank">@<?php the_field( 'bluesky' ) ?></a></li><?php endif ?>
 							<?php if ( get_field( 'twitter' ) ): ?><li class="icon twitter"><a href="http://twitter.com/<?php the_field( 'twitter' ) ?>" target="_blank">@<?php the_field( 'twitter' ) ?></a></li><?php endif ?>
