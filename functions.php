@@ -28,8 +28,7 @@
 				add_action( 'init', array( &$this, 'create_services_taxonomy' ) );
 				add_action( 'init', array( &$this, 'create_tools_taxonomy' ) );
 				add_action( 'acf/init', array( &$this, 'add_advanced_custom_fields' ) );
-				add_action( 'admin_init', array( &$this, 'add_role_and_capabilities' ) );
-				// add_action( 'switch_theme', array( &$this, 'add_role_and_capabilities' ) );
+				add_action( 'after_setup_theme', array( &$this, 'add_role_and_capabilities' ) );
 
 				add_action( 'after_setup_theme', array( &$this, 'setup' ) );
 				add_action( 'wp_enqueue_scripts', array( &$this, 'styles' ) );
